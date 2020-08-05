@@ -76,16 +76,24 @@
 
         document.getElementById('submitBtn').addEventListener('click',function(){
             var generatePinInput = document.getElementById('generatePin').value;
-            var finalPinInput = parseInt(generatePinInput); 
+            var finalPinInput = parseInt(generatePinInput);
+            console.log(finalPinInput); 
 
             var padPinInput = document.getElementById('padInput').value;
             var finalPadInput = parseInt(padPinInput);
+            console.log(finalPadInput);
 
-        if(finalPadInput === finalPinInput){
-                document.getElementById('pinNotMatch').style.display="block";
+            var result = finalPinInput + finalPadInput;
+
+            console.log(result);
+
+            if(finalPinInput === finalPadInput){
+                document.getElementById('pinMatch').style.display="block";
+                document.getElementById('pinNotMatch').style.display="none";
             }else{
-            document.getElementById('pinMatch').style.display="block";
-        }
+                document.getElementById('pinNotMatch').style.display="block";
+                document.getElementById('pinMatch').style.display="none";
+            }
         })
     </script>
 </body>
