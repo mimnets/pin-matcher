@@ -42,7 +42,7 @@
                                 <div class="button" onclick = "buttonPad('c')">C</div>
                             </div>
                             <div>
-                                <button type="submit" class="submit-btn">Submit</button>
+                                <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
                                 <p class="action-left">3 try left</p>
                             </div>
                     </div>
@@ -73,6 +73,20 @@
                 document.getElementById('padInput').value+=i;
             }
         }
+
+        document.getElementById('submitBtn').addEventListener('click',function(){
+            var generatePinInput = document.getElementById('generatePin').value;
+            var finalPinInput = parseInt(generatePinInput); 
+
+            var padPinInput = document.getElementById('padInput').value;
+            var finalPadInput = parseInt(padPinInput);
+
+        if(finalPadInput === finalPinInput){
+                document.getElementById('pinNotMatch').style.display="block";
+            }else{
+            document.getElementById('pinMatch').style.display="block";
+        }
+        })
     </script>
 </body>
 </html>
