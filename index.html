@@ -18,28 +18,28 @@
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" id="padInput">
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
-                              <div class="button">7</div>
-                              <div class="button">8</div>
-                              <div class="button">9</div>
+                              <div class="button" onclick = "buttonPad(7)">7</div>
+                              <div class="button" onclick = "buttonPad(8)">8</div>
+                              <div class="button" onclick = "buttonPad(9)">9</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">4</div>
-                              <div class="button">5</div>
-                              <div class="button">6</div>
+                              <div class="button" onclick = "buttonPad(4)">4</div>
+                              <div class="button" onclick = "buttonPad(5)">5</div>
+                              <div class="button" onclick = "buttonPad(6)">6</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">1</div>
-                              <div class="button">2</div>
-                              <div class="button">3</div>
+                              <div class="button" onclick = "buttonPad(1)">1</div>
+                              <div class="button" onclick = "buttonPad(2)">2</div>
+                              <div class="button" onclick = "buttonPad(3)">3</div>
                             </div>
                             <div class="calc-button-row">
-                                <div class="button"><</div>
-                                <div class="button">0</div>
-                                <div class="button">C</div>
+                                <div class="button" onclick = "buttonPad('<')"><</div>
+                                <div class="button" onclick = "buttonPad(0)">0</div>
+                                <div class="button" onclick = "buttonPad('c')">C</div>
                             </div>
                             <div>
                                 <button type="submit" class="submit-btn">Submit</button>
@@ -66,6 +66,13 @@
             max = Math.floor(max);
             return Math.floor(Math.random() * (max -min)) + min;
             }
+        function buttonPad(i){
+            if( i === 'c'){
+                document.getElementById('padInput').value="";
+            }else{
+                document.getElementById('padInput').value+=i;
+            }
+        }
     </script>
 </body>
 </html>
