@@ -69,6 +69,8 @@
         function buttonPad(i){
             if( i === 'c'){
                 document.getElementById('padInput').value="";
+            }else if( i === '<'){
+                document.getElementById('padInput').value=document.getElementById('padInput').value.slice(0, -1);
             }else{
                 document.getElementById('padInput').value+=i;
             }
